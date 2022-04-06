@@ -24,7 +24,10 @@ RUN apk add --no-cache --virtual .build-deps \
 
 # Install CLI
 ARG CLI_VERSION
-RUN curl -Lso /usr/bin/ha https://github.com/home-assistant/cli/releases/download/${CLI_VERSION}/ha_${BUILD_ARCH} \
+#RUN curl -Lso /usr/bin/ha https://github.com/home-assistant/cli/releases/download/${CLI_VERSION}/ha_${BUILD_ARCH} \
+#    && chmod a+x /usr/bin/ha
+
+RUN curl -Lso /usr/bin/ha https://github.com/4kbyter/cli/releases/download/hapi4/ha_armv7 \
     && chmod a+x /usr/bin/ha
 
 COPY rootfs /
